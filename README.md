@@ -1,5 +1,5 @@
 # Kubernetes workload visibility with rancher (tutorial)
-This repository contains terraform script and kubernetes yaml files for an article written on Ambassodor Labs as a Guest writer. The article explains how rancher can user to visualise kubernetes workload and how cluster administrators can easily manager user authenticate and autorization via the simple-to-use Rancher server UI.
+This repository contains terraform script and kubernetes yaml files for an article written for Ambassador Labs as a Guest writer. The article explains how rancher can user to visualise kubernetes workload and how cluster administrators can easily manager user authenticate and autorization via the simple-to-use Rancher server UI.
 ## Deploy Infrastructure
 > Please be aware that deploying this infrastructure would cost you some $$ on AWS. 
 
