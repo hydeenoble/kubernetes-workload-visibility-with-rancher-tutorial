@@ -1,0 +1,159 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alice
+  namespace: ns-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      team: developer
+  template:
+    metadata:
+      labels:
+        team: developer
+    spec:
+      containers:
+        - env:
+            - name: APP_NAME
+              value: Alice
+          image: dockersamples/static-site
+          imagePullPolicy: Always
+          name: alice
+          ports:
+            - containerPort: 80
+              protocol: TCP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bob
+  namespace: ns-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      team: developer
+  template:
+    metadata:
+      labels:
+        team: developer
+    spec:
+      containers:
+        - env:
+            - name: APP_NAME
+              value: Bob
+          image: dockersamples/static-site
+          imagePullPolicy: Always
+          name: bob
+          ports:
+            - containerPort: 80
+              protocol: TCP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: charlie
+  namespace: ns-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      team: admin
+  template:
+    metadata:
+      labels:
+        team: admin
+    spec:
+      containers:
+        - env:
+            - name: APP_NAME
+              value: Charlie
+          image: dockersamples/static-site
+          imagePullPolicy: Always
+          name: charlie
+          ports:
+            - containerPort: 80
+              protocol: TCP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dave
+  namespace: ns-4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      team: admin
+  template:
+    metadata:
+      labels:
+        team: admin
+    spec:
+      containers:
+        - env:
+            - name: APP_NAME
+              value: Dave
+          image: dockersamples/static-site
+          imagePullPolicy: Always
+          name: dave
+          ports:
+            - containerPort: 80
+              protocol: TCP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eve
+  namespace: ns-5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      team: superadmin
+  template:
+    metadata:
+      labels:
+        team: superadmin
+    spec:
+      containers:
+        - env:
+            - name: APP_NAME
+              value: Eve
+          image: dockersamples/static-site
+          imagePullPolicy: Always
+          name: eve
+          ports:
+            - containerPort: 80
+              protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frank
+  namespace: ns-6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      team: superadmin
+  template:
+    metadata:
+      labels:
+        team: superadmin
+    spec:
+      containers:
+        - env:
+            - name: APP_NAME
+              value: frank
+          image: dockersamples/static-site
+          imagePullPolicy: Always
+          name: frank
+          ports:
+            - containerPort: 80
+              protocol: TCP
